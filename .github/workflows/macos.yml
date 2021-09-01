@@ -66,7 +66,7 @@ jobs:
           CERTIFICATE_OSX_P12: ${{ secrets.CERTIFICATE_OSX_P12 }}
           CERTIFICATE_OSX_PASSWORD: ${{ secrets.CERTIFICATE_OSX_PASSWORD }}
           CERTIFICATE_OSX_ID: ${{ secrets.CERTIFICATE_OSX_ID }}
-        if: env.SHOULD_BUILD == 'yes' && env.SHOULD_DEPLOY == 'yes'
+        if: env.XSHOULD_BUILD == 'yes' && env.SHOULD_DEPLOY == 'yes'
         run: |
           if [ -d "VSCode-darwin-${VSCODE_ARCH}" ]; then # just in case the build failed
             cd "VSCode-darwin-${VSCODE_ARCH}"
