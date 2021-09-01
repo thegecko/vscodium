@@ -2,6 +2,11 @@ name: macos_build
 
 on:
   workflow_dispatch:
+    inputs:
+      deploy:
+        description: 'Deploy'     
+        required: false
+        default: 'no'
   schedule:
     - cron: '0 0 * * *'
   push:
@@ -14,6 +19,7 @@ jobs:
     env:
       OS_NAME: "osx"
       VSCODE_ARCH: "x64"
+      SHOULD_DEPLOY: ${{ github.event.inputs.deploy }}
     steps:
       - uses: actions/checkout@v2
         
